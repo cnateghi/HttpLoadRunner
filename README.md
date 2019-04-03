@@ -12,6 +12,8 @@ When the tests have completed, the following class properties are filled with re
 * ResponseTimes    - the list of response times for each call
 * ResponseMessages - the list of HttpResponseMessages for each call
 
+The following is a basic example of how to use the HttpLoadRunner in your testclass and use it in 2 test methods:
+
 ```
 namespace ExampleTests
 {
@@ -75,5 +77,10 @@ namespace ExampleTests
             _httpLoadRunner.ResponseTimes.Average().Should().BeLessOrEqualTo(_avgResponseTime);
         }
     }
-   }
-  
+}
+
+```
+
+You can add various PostData in case you want to call a Post method with different data for each call, just use the AddPostData method to add an object to the list. You should add the same amount of elements as numCalls, but if there is no corresponding object in the PostData the class will use the first element in PostData.
+
+You can add multiple HttpRequestHeaders by calling AddHttpRequestHeader. 
