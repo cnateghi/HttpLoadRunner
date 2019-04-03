@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Sita.BagDrop.DcsConnect.LoadTests.Helpers
+namespace LoadTests.Helpers
 {
     public class HttpLoadRunner
     {
